@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean name="expensiveService"
+          lazy-init="true"
+          init-method="extractDataFromRemoteRepository"
+          class="com.endava.internship.s_14_dependencies.s_03_lazyinitialized.domain.ExpensiveService"/>
+
+    <bean name="regularService"
+          lazy-init="false"
+          init-method="init"
+          class="com.endava.internship.s_14_dependencies.s_03_lazyinitialized.domain.RegularService"/>
+</beans>

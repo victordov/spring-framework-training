@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--   <bean name="calculator"-->
+    <!--        class="com.endava.internship.s_14_dependencies.s_04_methodinjection.domain.calculator.Calculator" />-->
+    <!--    -->
+    <bean
+            class="com.endava.internship.s_14_dependencies.s_04_methodinjection.domain.calculator.Calculator">
+        <replaced-method name="calculate" replacer="replacementOfCalculate"/>
+    </bean>
+
+    <bean id="replacementOfCalculate" class="com.endava.internship.s_14_dependencies.s_04_methodinjection.domain.calculator.ModernCalculation"/>
+
+</beans>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean name="pilot"
+          class="com.endava.internship.s_14_dependencies.s_01_dependencyinjection.s_0_2_setterbased.domain.Pilot"/>
+
+    <bean class="com.endava.internship.s_14_dependencies.s_01_dependencyinjection.s_0_2_setterbased.domain.Airplane">
+        <property name="pilot" ref="pilot"/>
+    </bean>
+</beans>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="friendThree" class="com.endava.internship.s_14_dependencies.s_02_detailed.v_08_compoundpropertynames.domain.FriendThree"/>
+    <bean id="friendTwo" class="com.endava.internship.s_14_dependencies.s_02_detailed.v_08_compoundpropertynames.domain.FriendTwo">
+        <property name="friendThree" ref="friendThree"/>
+    </bean>
+
+    <bean id="friendOne" class="com.endava.internship.s_14_dependencies.s_02_detailed.v_08_compoundpropertynames.domain.FriendOne">
+        <property name="friendTwo" ref="friendTwo"/>
+        <property name="friendTwo.friendThree.skill" value="painting"/>
+    </bean>
+</beans>

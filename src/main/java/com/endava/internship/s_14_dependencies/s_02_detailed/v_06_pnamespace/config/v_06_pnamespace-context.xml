@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean name="classicComputer" class="com.endava.internship.s_14_dependencies.s_02_detailed.v_06_pnamespace.domain.Computer">
+        <property name="model" value="HP"/>
+        <property name="frequency" value="3.8"/>
+    </bean>
+
+    <bean name="pNameSpaceComputer" class="com.endava.internship.s_14_dependencies.s_02_detailed.v_06_pnamespace.domain.Computer"
+          p:frequency="4.2"
+          p:model="Lenovo"/>
+</beans>

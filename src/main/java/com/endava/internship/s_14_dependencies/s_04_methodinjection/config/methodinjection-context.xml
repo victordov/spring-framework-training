@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean name="command" class="com.endava.internship.s_14_dependencies.s_04_methodinjection.domain.commands.Command"/>
+
+    <bean name="commandExecutor"
+          class="com.endava.internship.s_14_dependencies.s_04_methodinjection.domain.commands.CommandExecutor"/>
+
+    <bean class="com.endava.internship.s_14_dependencies.s_04_methodinjection.domain.commands.AbstractCommandExecutor">
+        <lookup-method name="createCommand" bean="command"/>
+    </bean>
+</beans>

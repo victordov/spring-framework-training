@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean name="firstCommand" class="com.endava.internship.s_14_dependencies.s_01_dependencyinjection.s_0_1_constructorbased.domain.FirstCommand"/>
+    <bean name="secondCommand" class="com.endava.internship.s_14_dependencies.s_01_dependencyinjection.s_0_1_constructorbased.domain.SecondCommand"/>
+
+    <bean class="com.endava.internship.s_14_dependencies.s_01_dependencyinjection.s_0_1_constructorbased.domain.CommandExecutor">
+        <constructor-arg value="system"/>
+        <constructor-arg ref="firstCommand"/>
+        <constructor-arg ref="secondCommand"/>
+    </bean>
+
+    <bean class="com.endava.internship.s_14_dependencies.s_01_dependencyinjection.s_0_1_constructorbased.domain.SimpleAnswerBean">
+        <!--        <constructor-arg value="42"/>-->
+        <!--        <constructor-arg value="Answer to the life the universe and everything "/>-->
+
+        <!--        <constructor-arg type="int" value="42"/>-->
+        <!--        <constructor-arg type="java.lang.String" value="Answer to the life the universe and everything "/>-->
+                <constructor-arg name="nrAnswer" value="42"/>
+                <constructor-arg name="ultimateAnswer" value="Answer to the life the universe and everything "/>
+<!--        <constructor-arg index="1" value="42"/>-->
+<!--        <constructor-arg index="0" name="ultimateAnswer" value="Answer to the life the universe and everything "/>-->
+    </bean>
+</beans>
