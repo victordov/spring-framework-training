@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--    using default constructor-->
+    <bean name="playerService"
+          class="com.endava.internship.s_13_beanoverview.domain.PlayerService"/>
+
+    <!--    using static factory method-->
+    <bean name="playerServiceRadio"
+          class="com.endava.internship.s_13_beanoverview.domain.PlayerService"
+          factory-method="createPlayerService">
+    </bean>
+
+    <!--    using factory-bean-->
+    <bean name="musicServiceLocator" class="com.endava.internship.s_13_beanoverview.domain.MusicServiceLocator"/>
+    <!--    class attribute is not required since it is inferred by factory-method-->
+    <bean name="onlinePlayerService"
+          factory-bean="musicServiceLocator"
+          factory-method="locateOnlineMusicService"/>
+    <!-- factory-bean can also handle multiple classes and multiple methods -->
+    <bean name="tapeMusicService"
+          factory-bean="musicServiceLocator"
+          factory-method="locateTapeMusicService"/>
+
+    <alias name="tapeMusicService" alias="tapeMusicServiceAlias"/>
+</beans>
