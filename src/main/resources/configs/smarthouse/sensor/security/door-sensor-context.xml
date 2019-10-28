@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/util
+       https://www.springframework.org/schema/util/spring-util.xsd">
+
+    <bean id="doorSensor"
+          scope="singleton"
+          class="com.endava.internship.smarthouse.domain.sensor.security.DoorSensor">
+        <constructor-arg type="java.lang.String" value="256_BOEIDMFOIT"/>
+    </bean>
+
+    <bean id="entranceDoorSensor"
+          scope="singleton"
+          class="com.endava.internship.smarthouse.domain.sensor.security.DoorSensor">
+        <constructor-arg type="java.lang.String" value="256_BOEIDMFOIT"/>
+        <!--                <property name="version" value="1"/>-->
+        <property name="version">
+            <util:constant static-field="com.endava.internship.smarthouse.domain.sensor.Version.NEW"/>
+        </property>
+    </bean>
+</beans>
