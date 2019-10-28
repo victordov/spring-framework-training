@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd"
+
+       default-init-method="init"
+       default-destroy-method="dispose">
+    <!--trigger inferred init and destroy in all beans defined in current context-->
+
+    <bean name="dataMigrationInitDestroyExample"
+          class="com.endava.internship.s_16_customization.s_01_lifecyclecallbacks.domain.DatabaseMigrationServiceAnnotated"/>
+</beans>
