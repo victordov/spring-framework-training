@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="simpleUser"
+          class="com.endava.internship.s_17_beandefinitioninheritance.domain.User">
+        <property name="name" value="Doe"/>
+        <property name="age" value="70"/>
+    </bean>
+
+    <bean id="advancedUser"
+          class="com.endava.internship.s_17_beandefinitioninheritance.domain.User"
+          parent="simpleUser">
+        <property name="name" value="Feynman"/>
+    </bean>
+</beans>
