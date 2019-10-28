@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <import resource="composed-parent-context.xml"/>
+
+    <bean name="smsNotificationSender"
+          class="com.endava.internship.s_12_container.domain.emailsender.SmsNotificationSender"/>
+</beans>
